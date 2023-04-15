@@ -24,9 +24,6 @@ jobs:
           distribution: 'zulu'
           java-version: 17
 
-      - name: Build with Maven
-        run: mvn clean install
-
       - name: Build Docker image
         run: |
           docker build -t ${{ env.DOCKER_USERNAME }}/demo-github-actions:${{ github.sha }} .
